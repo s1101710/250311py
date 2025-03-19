@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>林坤宏簡介</title>
+    <style>
+        body { text-align: center; }
+        table { margin: auto; }
+        * { font-family: "標楷體", "PMingLiU", "Microsoft JhengHei", sans-serif; }
+        h1 { color: blue; font-size: 60px; }
+        h2 { color: #33ff33; font-size: 40px; }
+    </style>
+
+    <script>
+    function change1() {
+        document.getElementById("pic").src = "{{ url_for('static', filename='school1.jpg') }}";
+        document.getElementById("h2text").innerText = "靜宜資管";
+    }
+
+    function change2() {
+        document.getElementById("pic").src = "{{ url_for('static', filename='school2.jpg') }}";
+        document.getElementById("h2text").innerText = "Kun-Hung Lin";
+    }
+	</script>
+
+</head>
+<body>
+    <table width="70%">
+        <tr>
+            <td>
+                <img src="{{ url_for('static', filename='school2.jpg') }}" width="110%" id="pic" onmouseover="change1()" onmouseout="change2()">
+
+            </td>
+            <td>
+                <h1>林坤宏</h1>
+                <h2 id="h2text">Kun-Hung Lin</h2>
+            </td>
+        </tr>
+    </table>
+
+    <table width="70%" border="1">
+        <tr>
+            <td>
+                IG：<a href="https://www.instagram.com/kun_hung_lin/" target="_blank">Instagram</a><br>
+                Tel: <a href="tel:0426328001,18110">04-26328001#18110</a><br>
+                E-Mail: <a href="mailto:s1101710@gm.pu.edu.tw">s1101710@gm.pu.edu.tw</a><br>
+            </td>
+
+            <td>
+                隨意得一首BGM<br>
+                <audio controls>
+					<source src="{{ url_for('static', filename='BGM.mp3') }}" type="audio/mp3">
+				</audio>
+
+            </td>
+
+            <td>
+                不要去臺灣<br>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/pW88QFpHXa8" allowfullscreen></iframe>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
